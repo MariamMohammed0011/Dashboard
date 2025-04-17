@@ -5,7 +5,13 @@ import IconButton from '@mui/material/IconButton';
 import { styled, useTheme ,alpha } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import { InputBase } from '@mui/material';
+import { Box, InputBase, Stack } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
     const drawerWidth = 240;
 
 
@@ -106,6 +112,29 @@ export default function TopBar({open,handleDrawerOpen}) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          <Box flexGrow={1}/>
+          
+       <Stack direction={"row"}>
+       <IconButton color='inherit'>
+        <DarkModeOutlinedIcon />
+      </IconButton>
+      <IconButton color='inherit'>
+        <LightModeOutlinedIcon />
+      </IconButton>
+      <IconButton color='inherit'>
+        <NotificationsOutlinedIcon />
+      </IconButton>
+     
+      <IconButton color='inherit'>
+        <SettingsOutlinedIcon />
+      </IconButton>
+      <IconButton color='inherit'>
+        <Person2OutlinedIcon />
+      </IconButton>
+      
+       </Stack>
+
+
            </Toolbar>
          </AppBar>
   )
