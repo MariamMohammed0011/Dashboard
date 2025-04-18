@@ -12,6 +12,7 @@ import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import { useState } from 'react';
     const drawerWidth = 240;
 
 
@@ -83,7 +84,7 @@ import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
       
       
 export default function TopBar({open,handleDrawerOpen}) {
-
+const theme=useTheme();
   return (
    <AppBar position="fixed" 
 // @ts-ignore
@@ -115,12 +116,14 @@ export default function TopBar({open,handleDrawerOpen}) {
           <Box flexGrow={1}/>
           
        <Stack direction={"row"}>
-       <IconButton color='inherit'>
+
+        {theme.palette.mode==="light"? <IconButton color='inherit'>
         <DarkModeOutlinedIcon />
-      </IconButton>
-      <IconButton color='inherit'>
+      </IconButton>: <IconButton color='inherit'>
         <LightModeOutlinedIcon />
-      </IconButton>
+      </IconButton>}
+      
+     
       <IconButton color='inherit'>
         <NotificationsOutlinedIcon />
       </IconButton>

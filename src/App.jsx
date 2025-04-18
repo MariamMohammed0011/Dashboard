@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { styled, useTheme } from '@mui/material/styles';
+import { createTheme, styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import TopBar from './components/TopBar.jsx';
 import SideBar from './components/SideBar.jsx';
-
-
+import { ThemeProvider } from '@emotion/react';
+import { getDesignTokens } from './theme.jsx';
 
     const DrawerHeader = styled('div')(({ theme }) => ({
       display: 'flex',
@@ -18,7 +18,10 @@ import SideBar from './components/SideBar.jsx';
     }));
 
 export default function MiniDrawer() {
- 
+  
+const [mode,setMode]=React.useState('dark');
+
+ const theme=React.useMemo(()=>createTheme(getDesignTokens(mode)),[mode]);
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -30,7 +33,8 @@ export default function MiniDrawer() {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <ThemeProvider theme={theme}>
+ <Box sx={{ display: 'flex' }}>
       <CssBaseline />
 
 
@@ -46,5 +50,7 @@ export default function MiniDrawer() {
 
       </Box>
     </Box>
+    </ThemeProvider>
+   
   );
 }
