@@ -83,7 +83,7 @@ import { useState } from 'react';
 
       
       
-export default function TopBar({open,handleDrawerOpen}) {
+export default function TopBar({open,handleDrawerOpen,setMode}) {
 const theme=useTheme();
   return (
    <AppBar position="fixed" 
@@ -117,11 +117,63 @@ const theme=useTheme();
           
        <Stack direction={"row"}>
 
-        {theme.palette.mode==="light"? <IconButton color='inherit'>
-        <DarkModeOutlinedIcon />
-      </IconButton>: <IconButton color='inherit'>
+        {theme.palette.mode==="light"? 
+        (<IconButton 
+          onClick={() => {
+          localStorage.setItem('currentMode',theme.palette.mode==='light'?'dark':'light')
+          
+          setMode(
+            // 'dark'
+            
+            (prevModee)=>
+        prevModee==='light'?'dark':'light'
+            
+            
+            
+            
+            
+        //     ,
+          
+          
+          ); 
+        
+        }
+        }
+        
+        
+        
+        color='inherit'>
         <LightModeOutlinedIcon />
-      </IconButton>}
+        </IconButton>)
+        
+        
+        : (<IconButton 
+          
+          
+          onClick={() => {
+          localStorage.setItem('currentMode',theme.palette.mode==='light'?'dark':'light')
+          
+          setMode(
+            // 'light'
+            
+            (prevMode)=>
+        prevMode==='light'?'dark':'light'
+          
+          
+          
+        //   ,
+        
+        
+        
+        );
+        
+        
+        
+         }} 
+         color='inherit'>
+            <DarkModeOutlinedIcon />
+          
+        </IconButton>)}
       
      
       <IconButton color='inherit'>

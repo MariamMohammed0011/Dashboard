@@ -19,7 +19,7 @@ import { getDesignTokens } from './theme.jsx';
 
 export default function MiniDrawer() {
   
-const [mode,setMode]=React.useState('dark');
+const [mode,setMode]=React.useState(localStorage.getItem("currentMode")?localStorage.getItem("currentMode"):'light');
 
  const theme=React.useMemo(()=>createTheme(getDesignTokens(mode)),[mode]);
   const [open, setOpen] = React.useState(false);
@@ -38,7 +38,7 @@ const [mode,setMode]=React.useState('dark');
       <CssBaseline />
 
 
-      <TopBar  open={open} handleDrawerOpen={handleDrawerOpen}   />
+      <TopBar  open={open} handleDrawerOpen={handleDrawerOpen} setMode={setMode}  />
 
 
 <SideBar open={open} handleDrawerClose={handleDrawerClose} />
