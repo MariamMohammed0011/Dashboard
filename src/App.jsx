@@ -7,7 +7,7 @@ import TopBar from './components/TopBar.jsx';
 import SideBar from './components/SideBar.jsx';
 import { ThemeProvider } from '@emotion/react';
 import { getDesignTokens } from './theme.jsx';
-
+import {Outlet} from 'react-router-dom'
     const DrawerHeader = styled('div')(({ theme }) => ({
       display: 'flex',
       alignItems: 'center',
@@ -48,7 +48,7 @@ const [mode,setMode]=React.useState(
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <Typography sx={{ marginBottom: 2 }}>
-          Lorem ipsum 
+         <Outlet />
         </Typography>
 
       </Box>

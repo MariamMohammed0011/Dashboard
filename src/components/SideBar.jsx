@@ -30,7 +30,7 @@ import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import { Avatar } from "@mui/material";
-
+import {useNavigate} from "react-router-dom"
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -109,7 +109,7 @@ const Array3=[
 ];
 export default function ({ open, handleDrawerClose }) {
   const theme = useTheme();
-
+  const navigate = useNavigate()
   return (
     <Drawer variant="permanent" open={open}>
       <DrawerHeader>
@@ -125,9 +125,9 @@ export default function ({ open, handleDrawerClose }) {
       <Divider />
 
 
-      <Avatar sx={{mx:"auto",width:open?88:44,height:open?88:44,lineHeight:open?88:44,my:1,border:"2px solid grey"}} alt="Remy Sharp" src="https://i.pinimg.com/736x/ee/d3/03/eed303679e96d27a96cd4850f4e3fb4c.jpg" />
-      <Typography align="center" sx={{fontSize:open?17:0}} >Mohammed Wanly</Typography>
-      <Typography align="center" sx={{fontSize:open?15:0}} >Admin</Typography>
+      <Avatar sx={{mx:"auto",width:open?88:44,height:open?88:44,lineHeight:open?88:44,my:1,border:"2px solid grey",transition:"0.25s"}} alt="Remy Sharp" src="https://i.pinimg.com/736x/ee/d3/03/eed303679e96d27a96cd4850f4e3fb4c.jpg" />
+      <Typography align="center" sx={{fontSize:open?17:0,transition:"0.25s"}} >Mohammed Wanly</Typography>
+      <Typography align="center" sx={{fontSize:open?15:0,transition:"0.25s",color:theme.palette.info.main}} >Admin</Typography>
 
 
 
@@ -166,7 +166,11 @@ export default function ({ open, handleDrawerClose }) {
       <List>
         {Array1.map((item) => (
           <ListItem key={item.path} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
+            <ListItemButton 
+             onClick={()=>{
+         
+              navigate(item.path)
+            }}
               sx={[
                 {
                   minHeight: 48,
@@ -229,6 +233,11 @@ export default function ({ open, handleDrawerClose }) {
         {Array2.map((i) => (
           <ListItem key={i.path} disablePadding sx={{ display: "block" }}>
             <ListItemButton
+               onClick={()=>{
+         
+                navigate(i.path)
+              }}
+
               sx={[
                 {
                   minHeight: 48,
@@ -293,6 +302,11 @@ export default function ({ open, handleDrawerClose }) {
         {Array3.map((icon) => (
           <ListItem key={icon.path} disablePadding sx={{ display: "block" }}>
             <ListItemButton
+               onClick={()=>{
+         
+                navigate(icon.path)
+              }}
+              
               sx={[
                 {
                   minHeight: 48,
