@@ -19,7 +19,10 @@ import { getDesignTokens } from './theme.jsx';
 
 export default function MiniDrawer() {
   
-const [mode,setMode]=React.useState(localStorage.getItem("currentMode")?localStorage.getItem("currentMode"):'light');
+const [mode,setMode]=React.useState(
+ Boolean( localStorage.getItem("currentMode"))
+  ?
+  localStorage.getItem("currentMode"):'light');
 
  const theme=React.useMemo(()=>createTheme(getDesignTokens(mode)),[mode]);
   const [open, setOpen] = React.useState(false);
