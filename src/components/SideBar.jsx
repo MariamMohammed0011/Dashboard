@@ -29,6 +29,7 @@ import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+import { Avatar } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -120,7 +121,48 @@ export default function ({ open, handleDrawerClose }) {
           )}
         </IconButton>
       </DrawerHeader>
+
       <Divider />
+
+
+      <Avatar sx={{mx:"auto",width:open?88:44,height:open?88:44,lineHeight:open?88:44,my:1,border:"2px solid grey"}} alt="Remy Sharp" src="https://i.pinimg.com/736x/ee/d3/03/eed303679e96d27a96cd4850f4e3fb4c.jpg" />
+      <Typography align="center" sx={{fontSize:open?17:0}} >Mohammed Wanly</Typography>
+      <Typography align="center" sx={{fontSize:open?15:0}} >Admin</Typography>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <Divider />
+
+
+
       <List>
         {Array1.map((item) => (
           <ListItem key={item.path} disablePadding sx={{ display: "block" }}>
@@ -172,7 +214,17 @@ export default function ({ open, handleDrawerClose }) {
           </ListItem>
         ))}
       </List>
+
+
+
+
       <Divider />
+
+
+
+
+
+
       <List>
         {Array2.map((i) => (
           <ListItem key={i.path} disablePadding sx={{ display: "block" }}>
@@ -224,7 +276,19 @@ export default function ({ open, handleDrawerClose }) {
           </ListItem>
         ))}
       </List>
+
+
+
+
+
+
       <Divider />
+
+
+
+
+
+
       <List>
         {Array3.map((icon) => (
           <ListItem key={icon.path} disablePadding sx={{ display: "block" }}>
@@ -276,6 +340,11 @@ export default function ({ open, handleDrawerClose }) {
           </ListItem>
         ))}
       </List>
+
+
+
+
+
     </Drawer>
   );
 }
