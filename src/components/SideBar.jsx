@@ -30,7 +30,8 @@ import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import { Avatar } from "@mui/material";
-import {useNavigate} from "react-router-dom"
+import {useNavigate,useLocation} from "react-router-dom";
+import {grey} from '@mui/material/colors'
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -109,7 +110,8 @@ const Array3=[
 ];
 export default function ({ open, handleDrawerClose }) {
   const theme = useTheme();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  let location=useLocation();
   return (
     <Drawer variant="permanent" open={open}>
       <DrawerHeader>
@@ -175,6 +177,7 @@ export default function ({ open, handleDrawerClose }) {
                 {
                   minHeight: 48,
                   px: 2.5,
+                  bgcolor:location.pathname===item.path?theme.palette.mode==='dark'?grey[800]:grey[300]:null,
                 },
                 open
                   ? {
@@ -242,6 +245,7 @@ export default function ({ open, handleDrawerClose }) {
                 {
                   minHeight: 48,
                   px: 2.5,
+                  bgcolor:location.pathname===i.path?theme.palette.mode==='dark'?grey[800]:grey[300]:null,
                 },
                 open
                   ? {
@@ -311,7 +315,8 @@ export default function ({ open, handleDrawerClose }) {
                 {
                   minHeight: 48,
                   px: 2.5,
-                },
+                  bgcolor:location.pathname===icon.path?theme.palette.mode==='dark'?grey[800]:grey[300]:null,
+               },
                 open
                   ? {
                       justifyContent: "initial",
