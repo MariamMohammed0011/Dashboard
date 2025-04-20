@@ -37,10 +37,10 @@ const columns =[
           backgroundColor:access==='Admin'? theme.palette.primary.dark :access==='Manager'? theme.palette.secondary.dark:'#3da58a' 
         }}
       >
-       {access==='Admin'&& <AdminPanelSettingsOutlinedIcon fontSize='small' />} 
-       {access==='Manager'&& <SecurityOutlinedIcon fontSize='small' />} 
-       {access==='User'&& <LockOpenOutlinedIcon fontSize='small' />} 
-        <Typography variant='body1' sx={{ fontSize: '13px' }}>{access}</Typography>
+       {access==='Admin'&& <AdminPanelSettingsOutlinedIcon sx={{color:'#fff'}} />} 
+       {access==='Manager'&& <SecurityOutlinedIcon sx={{color:'#fff'}} />} 
+       {access==='User'&& <LockOpenOutlinedIcon sx={{color:'#fff'}} />} 
+        <Typography variant='body1' sx={{ fontSize: '13px' ,color:'#fff'}}>{access}</Typography>
       </Box>
     );
   }
@@ -49,7 +49,7 @@ const columns =[
 
 
   return (
-    <Box sx={{ height: 400, width: '98%' }}>
+    <Box sx={{ height: 400, width: '98%',mx:'auto' }}>
       <DataGrid
         rows={rows}
         // @ts-ignore
