@@ -110,7 +110,13 @@ function Sidebar({ weekendsVisible, handleWeekendsToggle, currentEvents }) {
         </label>
       </div> */}
       {/* <div className='demo-app-sidebar-section'> */}
-        <h2 style={{textAlign:'center',marginTop:'50px',marginBottom:'50px'}}>All Events ({currentEvents.length})</h2>
+        <h2 style={{textAlign:'center'
+        // ,marginTop:'50px',marginBottom:'50px'
+
+
+
+
+        }}>All Events ({currentEvents.length})</h2>
      
         <ul >
           {currentEvents.map((event) => (

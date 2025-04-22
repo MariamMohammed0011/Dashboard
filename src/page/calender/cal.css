@@ -1,5 +1,5 @@
 
-
+/* 
 
 h2 {
   margin: 0;
@@ -16,7 +16,7 @@ li {
   padding: 0;
 }
 
-b { /* used for event dates/times */
+b { 
   margin-right: 3px;
 }
 
@@ -41,12 +41,12 @@ b { /* used for event dates/times */
 .demo-app-main {
   flex-grow: 1;
   padding: 3em;
-}
+} */
 
-.fc { /* the calendar root */
+/* .fc { 
   max-width: 1100px;
   margin: 0 auto;
-}
-.demo-app-sidebar ul li {
-    margin-left: 40px; /* أو أي مسافة تحبها */
-  }
+} */
+/* .demo-app-sidebar ul li {
+    margin-left: 40px; 
+  } */
