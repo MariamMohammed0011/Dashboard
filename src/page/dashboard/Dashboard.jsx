@@ -2,15 +2,17 @@ import React from 'react'
 import Row1 from './Row1'
 import Row2 from './Row2'
 import Row3 from './Row3'
-import { Button } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import GetAppOutlinedIcon from '@mui/icons-material/GetAppOutlined';
 export default function Dashboard() {
   return (
    <div>
-    <Button variant='text' color='primary' >
+    <Box sx={{textAlign:'right'}}>
+    <Button variant='contained' color='primary' sx={{padding:'6px 8px ',textTransform:'capitalize'}}  >
       <GetAppOutlinedIcon/>
       Download Reports
     </Button>
+    </Box>
     <Row1/>
     <Row2/>
     <Row3/>
