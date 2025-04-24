@@ -9,11 +9,12 @@ import Invoices from './page/invoices/Invoices.jsx'
 import Form from './page/form/Form.jsx'
 import Calender from './page/calender/Calender.jsx'
 import Faq from './page/faq/Faq.jsx'
-import Bar from './page/bar/Bar.jsx'
-import Pie from './page/pie/Pie.jsx'
-import Line from './page/line/Line.jsx'
-import Geography from './page/geography/Geography.jsx'
+import BarChar from './page/bar/BarChar.jsx'
+import PieChar from './page/pie/PieChar.jsx'
+import LineChar from './page/line/LineChar.jsx'
+import GeographyChar from './page/geography/GeographyChar.jsx'
 import {createBrowserRouter, createRoutesFromElements, Route,RouterProvider} from "react-router-dom"
+
 
 
 const router=createBrowserRouter(
@@ -27,10 +28,10 @@ createRoutesFromElements(
     <Route path='form' element={<Form/>}/>
     <Route path='calender' element={<Calender/>}/>
     <Route path='faq' element={<Faq/>}/>
-    <Route path='bar' element={<Bar/>}/>
-    <Route path='pie' element={<Pie/>}/>
-    <Route path='line' element={<Line/>}/>
-    <Route path='geography' element={<Geography/>}/>
+    <Route path='bar' element={<BarChar/>}/>
+    <Route path='pie' element={<PieChar/>}/>
+    <Route path='line' element={<LineChar/>}/>
+    <Route path='geography' element={<GeographyChar/>}/>
 
   </Route>
 )
