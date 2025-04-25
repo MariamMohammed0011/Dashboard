@@ -2,7 +2,7 @@ import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
-
+import Tooltip from "@mui/material/Tooltip";
 import List from "@mui/material/List";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
@@ -17,21 +17,21 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined';
-import ContactsOutlinedIcon from '@mui/icons-material/ContactsOutlined';
-import ReceiptOutlinedIcon from '@mui/icons-material/ReceiptOutlined';
-import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
-import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
-import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
-import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
-import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
-import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
-import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
+import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
+import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
+import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
+import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
+import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
+import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import { Avatar } from "@mui/material";
-import {useNavigate,useLocation} from "react-router-dom";
-import {grey} from '@mui/material/colors'
+import { useNavigate, useLocation } from "react-router-dom";
+import { grey } from "@mui/material/colors";
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -89,29 +89,34 @@ const Drawer = styled(MuiDrawer, {
   ],
 }));
 const Array1 = [
-  {"text":"Dashboard","icon":<HomeOutlinedIcon/>,"path":"/"},
-  {"text":"Manage Team","icon":<PeopleOutlineOutlinedIcon/>,"path":"/team"},
-  {"text":"Contacts Information","icon":<ContactsOutlinedIcon/>,"path":"/contacts"},
-  {"text":"Invoices Balances","icon":<ReceiptOutlinedIcon/>,"path":"/invoices"},
-
-
+  { text: "Dashboard", icon: <HomeOutlinedIcon />, path: "/" },
+  { text: "Manage Team", icon: <PeopleOutlineOutlinedIcon />, path: "/team" },
+  {
+    text: "Contacts Information",
+    icon: <ContactsOutlinedIcon />,
+    path: "/contacts",
+  },
+  {
+    text: "Invoices Balances",
+    icon: <ReceiptOutlinedIcon />,
+    path: "/invoices",
+  },
 ];
-const Array2=[
-  {"text":"Profile Form","icon":<Person2OutlinedIcon/>,"path":"/form"},
-  {"text":"Calender","icon":<CalendarTodayOutlinedIcon/>,"path":"/calender"},
-  {"text":"FAQ Page","icon":<HelpOutlineOutlinedIcon/>,"path":"/faq"},
+const Array2 = [
+  { text: "Profile Form", icon: <Person2OutlinedIcon />, path: "/form" },
+  { text: "Calender", icon: <CalendarTodayOutlinedIcon />, path: "/calender" },
+  { text: "FAQ Page", icon: <HelpOutlineOutlinedIcon />, path: "/faq" },
 ];
-const Array3=[
-  {"text":"Bar Chart","icon":<BarChartOutlinedIcon/>,"path":"/bar"},
-  {"text":"Pie Chart","icon":<PieChartOutlineOutlinedIcon/>,"path":"/pie"},
-  {"text":"Line Chart","icon":<TimelineOutlinedIcon/>,"path":"/line"},
-  {"text":"Geography Chart","icon":<MapOutlinedIcon/>,"path":"/geography"},
- 
+const Array3 = [
+  { text: "Bar Chart", icon: <BarChartOutlinedIcon />, path: "/bar" },
+  { text: "Pie Chart", icon: <PieChartOutlineOutlinedIcon />, path: "/pie" },
+  { text: "Line Chart", icon: <TimelineOutlinedIcon />, path: "/line" },
+  { text: "Geography Chart", icon: <MapOutlinedIcon />, path: "/geography" },
 ];
 export default function ({ open, handleDrawerClose }) {
   const theme = useTheme();
   const navigate = useNavigate();
-  let location=useLocation();
+  let location = useLocation();
   return (
     <Drawer variant="permanent" open={open}>
       <DrawerHeader>
@@ -126,244 +131,230 @@ export default function ({ open, handleDrawerClose }) {
 
       <Divider />
 
-
-      <Avatar sx={{mx:"auto",width:open?88:44,height:open?88:44,lineHeight:open?88:44,my:1,border:"2px solid grey",transition:"0.25s"}} alt="Remy Sharp" src="https://i.pinimg.com/736x/ee/d3/03/eed303679e96d27a96cd4850f4e3fb4c.jpg" />
-      <Typography align="center" sx={{fontSize:open?17:0,transition:"0.25s"}} >Mohammed Wanly</Typography>
-      <Typography align="center" sx={{fontSize:open?15:0,transition:"0.25s",color:theme.palette.info.main}} >Admin</Typography>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <Avatar
+        sx={{
+          mx: "auto",
+          width: open ? 88 : 44,
+          height: open ? 88 : 44,
+          lineHeight: open ? 88 : 44,
+          my: 1,
+          border: "2px solid grey",
+          transition: "0.25s",
+        }}
+        alt="Remy Sharp"
+        src="./mohammed.jpg"
+      />
+      <Typography
+        align="center"
+        sx={{ fontSize: open ? 17 : 0, transition: "0.25s" }}
+      >
+        Mohammed Wanly
+      </Typography>
+      <Typography
+        align="center"
+        sx={{
+          fontSize: open ? 15 : 0,
+          transition: "0.25s",
+          color: theme.palette.info.main,
+        }}
+      >
+        Admin
+      </Typography>
 
       <Divider />
-
-
 
       <List>
         {Array1.map((item) => (
           <ListItem key={item.path} disablePadding sx={{ display: "block" }}>
-            <ListItemButton 
-             onClick={()=>{
-         
-              navigate(item.path)
-            }}
-              sx={[
-                {
-                  minHeight: 48,
-                  px: 2.5,
-                  bgcolor:location.pathname===item.path?theme.palette.mode==='dark'?grey[800]:grey[300]:null,
-                },
-                open
-                  ? {
-                      justifyContent: "initial",
-                    }
-                  : {
-                      justifyContent: "center",
-                    },
-              ]}
-            >
-              <ListItemIcon
+            <Tooltip title={open ? null : item.text} placement="left">
+              <ListItemButton
+                onClick={() => {
+                  navigate(item.path);
+                }}
                 sx={[
                   {
-                    minWidth: 0,
-                    justifyContent: "center",
+                    minHeight: 48,
+                    px: 2.5,
+                    bgcolor:
+                      location.pathname === item.path
+                        ? theme.palette.mode === "dark"
+                          ? grey[800]
+                          : grey[300]
+                        : null,
                   },
                   open
                     ? {
-                        mr: 3,
+                        justifyContent: "initial",
                       }
                     : {
-                        mr: "auto",
+                        justifyContent: "center",
                       },
                 ]}
               >
-               {item.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={item.text}
-                sx={[
-                  open
-                    ? {
-                        opacity: 1,
-                      }
-                    : {
-                        opacity: 0,
-                      },
-                ]}
-              />
-            </ListItemButton>
+                <ListItemIcon
+                  sx={[
+                    {
+                      minWidth: 0,
+                      justifyContent: "center",
+                    },
+                    open
+                      ? {
+                          mr: 3,
+                        }
+                      : {
+                          mr: "auto",
+                        },
+                  ]}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText
+                  primary={item.text}
+                  sx={[
+                    open
+                      ? {
+                          opacity: 1,
+                        }
+                      : {
+                          opacity: 0,
+                        },
+                  ]}
+                />
+              </ListItemButton>
+            </Tooltip>
           </ListItem>
         ))}
       </List>
 
-
-
-
       <Divider />
-
-
-
-
-
 
       <List>
         {Array2.map((i) => (
           <ListItem key={i.path} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
-               onClick={()=>{
-         
-                navigate(i.path)
-              }}
-
-              sx={[
-                {
-                  minHeight: 48,
-                  px: 2.5,
-                  bgcolor:location.pathname===i.path?theme.palette.mode==='dark'?grey[800]:grey[300]:null,
-                },
-                open
-                  ? {
-                      justifyContent: "initial",
-                    }
-                  : {
-                      justifyContent: "center",
-                    },
-              ]}
-            >
-              <ListItemIcon
+            <Tooltip title={open ? null : i.text} placement="left">
+              <ListItemButton
+                onClick={() => {
+                  navigate(i.path);
+                }}
                 sx={[
                   {
-                    minWidth: 0,
-                    justifyContent: "center",
+                    minHeight: 48,
+                    px: 2.5,
+                    bgcolor:
+                      location.pathname === i.path
+                        ? theme.palette.mode === "dark"
+                          ? grey[800]
+                          : grey[300]
+                        : null,
                   },
                   open
                     ? {
-                        mr: 3,
+                        justifyContent: "initial",
                       }
                     : {
-                        mr: "auto",
+                        justifyContent: "center",
                       },
                 ]}
               >
-                {i.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={i.text}
-                sx={[
-                  open
-                    ? {
-                        opacity: 1,
-                      }
-                    : {
-                        opacity: 0,
-                      },
-                ]}
-              />
-            </ListItemButton>
+                <ListItemIcon
+                  sx={[
+                    {
+                      minWidth: 0,
+                      justifyContent: "center",
+                    },
+                    open
+                      ? {
+                          mr: 3,
+                        }
+                      : {
+                          mr: "auto",
+                        },
+                  ]}
+                >
+                  {i.icon}
+                </ListItemIcon>
+                <ListItemText
+                  primary={i.text}
+                  sx={[
+                    open
+                      ? {
+                          opacity: 1,
+                        }
+                      : {
+                          opacity: 0,
+                        },
+                  ]}
+                />
+              </ListItemButton>
+            </Tooltip>
           </ListItem>
         ))}
       </List>
 
-
-
-
-
-
       <Divider />
-
-
-
-
-
 
       <List>
         {Array3.map((icon) => (
           <ListItem key={icon.path} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
-               onClick={()=>{
-         
-                navigate(icon.path)
-              }}
-              
-              sx={[
-                {
-                  minHeight: 48,
-                  px: 2.5,
-                  bgcolor:location.pathname===icon.path?theme.palette.mode==='dark'?grey[800]:grey[300]:null,
-               },
-                open
-                  ? {
-                      justifyContent: "initial",
-                    }
-                  : {
-                      justifyContent: "center",
-                    },
-              ]}
-            >
-              <ListItemIcon
+            <Tooltip title={open ? null : icon.text} placement="left">
+              <ListItemButton
+                onClick={() => {
+                  navigate(icon.path);
+                }}
                 sx={[
                   {
-                    minWidth: 0,
-                    justifyContent: "center",
+                    minHeight: 48,
+                    px: 2.5,
+                    bgcolor:
+                      location.pathname === icon.path
+                        ? theme.palette.mode === "dark"
+                          ? grey[800]
+                          : grey[300]
+                        : null,
                   },
                   open
                     ? {
-                        mr: 3,
+                        justifyContent: "initial",
                       }
                     : {
-                        mr: "auto",
+                        justifyContent: "center",
                       },
                 ]}
               >
-                {icon.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={icon.text}
-                sx={[
-                  open
-                    ? {
-                        opacity: 1,
-                      }
-                    : {
-                        opacity: 0,
-                      },
-                ]}
-              />
-            </ListItemButton>
+                <ListItemIcon
+                  sx={[
+                    {
+                      minWidth: 0,
+                      justifyContent: "center",
+                    },
+                    open
+                      ? {
+                          mr: 3,
+                        }
+                      : {
+                          mr: "auto",
+                        },
+                  ]}
+                >
+                  {icon.icon}
+                </ListItemIcon>
+                <ListItemText
+                  primary={icon.text}
+                  sx={[
+                    open
+                      ? {
+                          opacity: 1,
+                        }
+                      : {
+                          opacity: 0,
+                        },
+                  ]}
+                />
+              </ListItemButton>{" "}
+            </Tooltip>
           </ListItem>
         ))}
       </List>
-
-
-
-
-
     </Drawer>
   );
 }

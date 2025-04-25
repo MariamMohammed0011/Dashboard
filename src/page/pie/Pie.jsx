@@ -1,42 +1,13 @@
 import React from 'react'
 import { ResponsivePie } from '@nivo/pie'
 import { Box,useTheme } from '@mui/material';
-const data=[
-    {
-      "id": "css",
-      "label": "css",
-      "value": 363,
-      "color": "hsl(174, 70%, 50%)"
-    },
-    {
-      "id": "rust",
-      "label": "rust",
-      "value": 541,
-      "color": "hsl(239, 70%, 50%)"
-    },
-    {
-      "id": "php",
-      "label": "php",
-      "value": 495,
-      "color": "hsl(15, 70%, 50%)"
-    },
-    {
-      "id": "erlang",
-      "label": "erlang",
-      "value": 190,
-      "color": "hsl(147, 70%, 50%)"
-    },
-    {
-      "id": "hack",
-      "label": "hack",
-      "value": 480,
-      "color": "hsl(44, 70%, 50%)"
-    }
-  ];
-export default function Pie() {
+import {data} from './data.js'
+import Header from '../../components/Header.jsx'
+export default function Pie({isDashboard=false}) {
     const theme=useTheme();
   return (
-    <Box sx={{height:'75vh'}}>
+    <Box sx={{height:isDashboard?'220px':'75vh'}}>
+   { isDashboard?[]: <Header title={'Pie Char'} subTitle={'welcome to my Pie Char'} />}
     <ResponsivePie
         data={data}
         theme={{
@@ -150,8 +121,8 @@ export default function Pie() {
               tableCellValue: {},
             },
           }}
-        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-        innerRadius={0.5}
+        margin={isDashboard?{ top: 10, right: 0, bottom: 10, left: 0 }:{ top: 40, right: 80, bottom: 80, left: 80 }}
+        innerRadius={isDashboard?0.8:0.5}
         padAngle={0.7}
         cornerRadius={3}
         activeOuterRadiusOffset={8}
@@ -170,6 +141,8 @@ export default function Pie() {
         arcLinkLabelsThickness={2}
         arcLinkLabelsColor={{ from: 'color' }}
         arcLabelsSkipAngle={10}
+        enableArcLabels= { isDashboard?false:true}
+        enableArcLinkLabels={ isDashboard?false:true}
         arcLabelsTextColor={{
             from: 'color',
             modifiers: [
@@ -249,7 +222,8 @@ export default function Pie() {
                 id: 'lines'
             }
         ]}
-        legends={[
+        legends={
+          isDashboard?[]:[
             {
                 anchor: 'bottom',
                 direction: 'row',

@@ -1,7 +1,17 @@
-import { Alert, Box, Button, IconButton, MenuItem, Snackbar, Stack, TextField } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Button,
+  IconButton,
+  MenuItem,
+  Snackbar,
+  Stack,
+  TextField,
+} from "@mui/material";
 import React from "react";
 import { useForm } from "react-hook-form";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
+import Header from "../../components/Header.jsx";
 const regEmail =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const phoneRegex = /^(\+?\d{1,3}[- ]?)?\d{10}$/;
@@ -20,51 +30,39 @@ const data = [
     label: "User",
   },
 ];
-export default function Form() {
-  
-
-
-
- const [open, setOpen] = React.useState(false);
+export default function Form({ isDashboard = false }) {
+  const [open, setOpen] = React.useState(false);
 
   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
 
     setOpen(false);
   };
 
-  
   const handleClick = () => {
     setOpen(true);
   };
 
-
   // const action = (
-    // <React.Fragment>
-    //   <Button color="secondary" size="small" onClick={handleClose}>
-    //     UNDO
-    //   </Button>
-    //   <IconButton
-    //     size="small"
-    //     aria-label="close"
-    //     color="inherit"
-    //     onClick={handleClose}
-    //   >
-    //     <CloseIcon fontSize="small" />
-    //   </IconButton>
-    // </React.Fragment>
-   
+  // <React.Fragment>
+  //   <Button color="secondary" size="small" onClick={handleClose}>
+  //     UNDO
+  //   </Button>
+  //   <IconButton
+  //     size="small"
+  //     aria-label="close"
+  //     color="inherit"
+  //     onClick={handleClose}
+  //   >
+  //     <CloseIcon fontSize="small" />
+  //   </IconButton>
+  // </React.Fragment>
+
   // );
 
-
-
-
-
-
-
-const {
+  const {
     register,
     handleSubmit,
     watch,
@@ -73,19 +71,8 @@ const {
 
   const onSubmit = () => {
     console.log("done");
-    handleClick()
+    handleClick();
   };
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <Box
@@ -99,6 +86,11 @@ const {
       noValidate
       autoComplete="off"
     >
+      {isDashboard ? (
+        []
+      ) : (
+        <Header title={"Forma"} subTitle={"Insert Your Data"} />
+      )}
       <Stack direction={"row"} sx={{ gap: 2 }}>
         <TextField
           error={Boolean(errors.firstName)}
@@ -168,35 +160,20 @@ const {
           create new user
         </Button>
 
- <Snackbar
- anchorOrigin={{vertical:'top',horizontal:'right'}}
-        open={open}
-        autoHideDuration={3000}
-        onClose={handleClose}
-        // message="Note archived"
-        // action={action}
-       
-      // />
-      >
- <Alert 
- 
- onClose={handleClose} severity="info" sx={{width:'100%'}}>
-     Account created successfully
-    </Alert>
-      </Snackbar>
+        <Snackbar
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+          open={open}
+          autoHideDuration={3000}
+          onClose={handleClose}
+          // message="Note archived"
+          // action={action}
 
-
-
-
-
-
-
-
-
-
-
-
-
+          // />
+        >
+          <Alert onClose={handleClose} severity="info" sx={{ width: "100%" }}>
+            Account created successfully
+          </Alert>
+        </Snackbar>
       </Box>
     </Box>
   );

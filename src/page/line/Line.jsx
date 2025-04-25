@@ -2,10 +2,12 @@ import { Box ,useTheme} from '@mui/material'
 import React from 'react'
 import { ResponsiveLine } from '@nivo/line'
 import {data} from './data.js'
-export default function Line() {
+import Header from '../../components/Header.jsx'
+export default function Line({isDashboard=false}) {
     const theme=useTheme();
   return (
-   <Box sx={{height:'75vh'}}>
+   <Box sx={{height:isDashboard?'280px':'75vh'}}>
+   { isDashboard?[]: <Header title={'Line Char'} subTitle={'welcome to my Line Char'} />}
       <ResponsiveLine
         data={data}
         theme={{
@@ -136,7 +138,7 @@ export default function Line() {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'transportation',
+            legend: isDashboard ? null:'transportation',
             legendOffset: 36,
             legendPosition: 'middle',
             truncateTickAt: 0
@@ -145,7 +147,7 @@ export default function Line() {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'Count',
+            legend:isDashboard ? null: 'Count',
             legendOffset: -44,
             legendPosition: 'middle',
             truncateTickAt: 0

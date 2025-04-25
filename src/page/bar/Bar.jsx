@@ -1,44 +1,17 @@
 import React from "react";
 import { ResponsiveBar } from "@nivo/bar";
 import { Box, useTheme } from "@mui/material";
-const data = [
-  {
-    year: 2018,
-    Syria: 1200,
-    France: 1300,
-    Germany: 3000,
-  },
-  {
-    year: 2020,
-    Syria: 1200,
-    France: 1600,
-    Germany: 3500,
-  },
-
-  {
-    year: 2023,
-    Syria: 1000,
-    France: 1500,
-    Germany: 2000,
-  },
-  {
-    year: 2025,
-    Syria: 1300,
-    France: 1900,
-    Germany: 2000,
-  },
-  {
-    year: 2028,
-    Syria: 1300,
-    France: 1500,
-    Germany: 2000,
-  },
-];
-
-export default function Bar() {
+import { data } from "./data.js";
+import Header from "../../components/Header.jsx";
+export default function Bar({ isDashboard = false }) {
   const theme = useTheme();
   return (
-    <Box sx={{ height: "75vh" }}>
+    <Box sx={{ height: isDashboard ? "400px" : "75vh" }}>
+      {isDashboard ? (
+        []
+      ) : (
+        <Header title={"Bar Char"} subTitle={"welcome to my Bar Char"} />
+      )}
       <ResponsiveBar
         data={data}
         theme={{
@@ -203,7 +176,7 @@ export default function Bar() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Year",
+          legend: isDashboard ? [] : "Year",
           legendPosition: "middle",
           legendOffset: 35,
           truncateTickAt: 0,
@@ -212,7 +185,7 @@ export default function Bar() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "salary/month",
+          legend: isDashboard ? [] : "salary/month",
           legendPosition: "middle",
           legendOffset: -55,
           truncateTickAt: 0,

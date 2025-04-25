@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import { rows, columns } from './data';
-
+import Header from '../../components/Header.jsx'
 export default function CustomFilterGrid() {
   const [filterColumn, setFilterColumn] = useState('name');
   const [filterValue, setFilterValue] = useState('');
@@ -50,6 +50,7 @@ export default function CustomFilterGrid() {
       };
   return (
     <Box sx={{height:400, width: '98%', mx: 'auto', mt: 2 }}>
+      <Header title={'Contact'} subTitle={'welcome to my Contact'} />
       {/* Filter Controls */}
  
       <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>

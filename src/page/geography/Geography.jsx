@@ -3,12 +3,16 @@ import { ResponsiveChoropleth } from "@nivo/geo";
 import { Box, useTheme } from "@mui/material";
 import { data } from "./data.js";
 import { geo } from "./world_countries.jsx";
-export default function Geography() {
+import Header from '../../components/Header.jsx'
+export default function Geography({isDashboard=false}) {
   const theme = useTheme();
   return (
-    <Box sx={{borderRadius:'5px' ,height: "75vh" , border:`1px solid ${theme.palette.text.primary}` }}>
+    <Box>
+    {isDashboard?[]:<Header title={'Geography'} subTitle={'welcome to my Geography'}  />}
+    <Box sx={{borderRadius:'5px' ,height:isDashboard?'450px': "75vh" , border:isDashboard?null:`1px solid ${theme.palette.text.primary}` }}>
+     
       <ResponsiveChoropleth
-      projectionScale={150}
+      projectionScale={isDashboard?70:150}
         data={data}
         theme={{
             // textColor: theme.palette.text.primary,
@@ -132,8 +136,8 @@ export default function Geography() {
         projectionRotation={[0, 0, 0]}
         enableGraticule={false}
         graticuleLineColor="#dddddd"
-        borderWidth={0.5}
-        borderColor="#152538"
+        borderWidth={1.1}
+        borderColor="#fff"
         // @ts-ignore
         // defs={[
         //   {
@@ -189,7 +193,7 @@ export default function Geography() {
         //     id: "gradient",
         //   },
         // ]}
-        legends={[
+        legends={isDashboard?[]:[
           {
             anchor: "bottom-left",
             direction: "column",
@@ -215,6 +219,6 @@ export default function Geography() {
           },
         ]}
       />
-    </Box>
+    </Box> </Box>
   );
 }

@@ -73,6 +73,7 @@ export default function DemoApp() {
           eventChange={function(){}}
           eventRemove={function(){}}
           */
+        //  eventColor='#ff2222'
         />
       </div>
     </Stack>

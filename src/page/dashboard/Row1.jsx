@@ -18,10 +18,10 @@ export default function Row1() {
       gap={1}
       justifyContent={{ xs: "center", sm: "space-between" }}
     >
-      <Card icon={<EmailOutlinedIcon sx={{ fontSize: '23px', color: theme.palette.secondary.main }} />} title={123.11} subTitle={'Emails Sent'} increase={'+19%'} data={data1} />
-      <Card icon={<PointOfSaleOutlinedIcon sx={{ fontSize: '23px', color: theme.palette.secondary.main }} />} title={32.77} subTitle={'Sales Obtained'} increase={'+80%'} data={data2} />
-      <Card icon={<PersonAddOutlinedIcon sx={{ fontSize: '23px', color: theme.palette.secondary.main }} />} title={3445.99} subTitle={'New Client'} increase={'+32%'} data={data3} />
-      <Card icon={<TrafficOutlinedIcon sx={{ fontSize: '23px', color: theme.palette.secondary.main }} />} title={786.88} subTitle={'Traffic Received'} increase={'+12%'} data={data4} />
+      <Card icon={<EmailOutlinedIcon sx={{ fontSize: '23px', color: theme.palette.secondary.main }} />} title={123.11} subTitle={'Emails Sent'} increase={'+19%'} data={data1} scheme={'nivo'} />
+      <Card icon={<PointOfSaleOutlinedIcon sx={{ fontSize: '23px', color: theme.palette.secondary.main }} />} title={32.77} subTitle={'Sales Obtained'} increase={'+80%'} data={data2} scheme={'category10'} />
+      <Card icon={<PersonAddOutlinedIcon sx={{ fontSize: '23px', color: theme.palette.secondary.main }} />} title={3445.99} subTitle={'New Client'} increase={'+32%'} data={data3} scheme={'accent'} />
+      <Card icon={<TrafficOutlinedIcon sx={{ fontSize: '23px', color: theme.palette.secondary.main }} />} title={786.88} subTitle={'Traffic Received'} increase={'+12%'} data={data4} scheme={'dark2'} />
       
     </Stack>
   );
