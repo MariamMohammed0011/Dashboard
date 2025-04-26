@@ -53,9 +53,11 @@ export default function MiniDrawer() {
             <Outlet />
           </Typography>
         </Box> */}
-        <Box sx={{ marginBottom: 2 }}>
-  <Outlet />
-</Box>
+       
+       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <DrawerHeader />
+          <Outlet />
+        </Box>
 
       </Box>
     </ThemeProvider>
