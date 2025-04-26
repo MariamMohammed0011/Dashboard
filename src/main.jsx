@@ -15,6 +15,8 @@ import LineChar from "./page/line/LineChar.jsx";
 import GeographyChar from "./page/geography/GeographyChar.jsx";
 import NotFound from "./page/notFound/NotFound.jsx";
 import MapComponent from "./page/map/MapComponent.jsx";
+import "leaflet/dist/leaflet.css";
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -36,7 +38,7 @@ const router = createBrowserRouter(
       <Route path="pie" element={<PieChar />} />
       <Route path="line" element={<LineChar />} />
       <Route path="geography" element={<GeographyChar />} />
-      <Route path="map" element={<MapComponent  />} />
+      <Route path="map" element={<MapComponent />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
